@@ -1,7 +1,10 @@
 <ul class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>  
+    <li (click)="setCurrentBrandCategory(nullBrandCategory)" [class]="getCurrentBrandCategoryClass(nullBrandCategory)" routerLink="/products">Tüm Markalar</li>
+    <li (click)="setCurrentBrandCategory(item)" [class]="getCurrentBrandCategoryClass(item)" *ngFor="let item of brandCategories" routerLink="/products/category/{{item.id}}">{{item.brandName}}</li>
+</ul>
+<br>
+<ul class="list-group">
+    <li (click)="setCurrentColorCategory(nullColorCategory)" [class]="getCurrentColorCategoryClass(nullColorCategory)" routerLink="/products">Tüm Renkler</li>
+    <li (click)="setCurrentColorCategory(item)" [class]="getCurrentColorCategoryClass(item)" *ngFor="let item of colorCategories" routerLink="/products/category/{{item.id}}">{{item.colorName}}</li>
+</ul>
+<br>
