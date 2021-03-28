@@ -1,5 +1,17 @@
+<div class="row">
 <div *ngIf="dataLoaded==false" class="spinner-border" role="status">
   <span class="sr-only"></span>
+</div>
+<div class="mb-3">
+  <label for="filterText" class="form-label">Serach Brand</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Serach Brand">
+</div>
+<div class="mb-3">
+  <label for="filterColorText" class="form-label">Serach Color</label>
+  <input type="text" [(ngModel)]="filterColorText" class="form-control" id="filterColorText" placeholder="Serach Color">
+</div>
+<div *ngIf="filterText" class="alert alert-primary">
+  {{filterText}} Aradınız.
 </div>
 <table *ngIf="dataLoaded==true" class="table table-striped">
     <thead>
@@ -9,18 +21,24 @@
         <th scope="col">Color Name</th>
         <th scope="col">Model Year</th>
         <th scope="col">Daily Price</th>
+        <th scope="col">VAT Daily Price</th>
         <th scope="col">Description</th>
+        <th scope="col">Detail</th>
+        <th scope="col">Add to Cart</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of carDetail">
+      <tr class="_row" *ngFor="let item of carDetail | filterPipe:filterText" style="cursor: default;">
         <th scope="row">{{item.id}}</th>
-        <td>{{item.brandName}}</td>
-        <td>{{item.colorName}}</td>
+        <td>{{item.brandName |uppercase}}</td>
+        <td>{{item.colorName |lowercase}}</td>
         <td>{{item.modelYear}}</td>
-        <td>{{item.dailyPrice}} TL</td>
+        <td>{{item.dailyPrice |currency}}</td>
+        <td>{{item.dailyPrice  |vatAdded:number:number |currency}}</td>
         <td>{{item.description}}</td>
+        <td><button class="btn btn-primary" routerLink="/products/carDetail/{{item.id}}">Detail</button></td>
+        <td><button (click)="addToCart(item)" type="button" class="btn btn-success">Add</button></td>
       </tr>
-       
     </tbody>
   </table>
+</div>
