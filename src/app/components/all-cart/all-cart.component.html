@@ -1,5 +1,7 @@
-
-    <div class="card-top border-bottom text-center"> <a routerLink="/products"> Back to shop</a> <span id="logo">Sepetiniz</span> </div>
+<div class="card-top border-bottom text-center"> 
+    <a routerLink="/products" class="link-primary">Back to shop</a> 
+    <span id="logo">Sepetiniz</span> 
+</div>
    <br>
    <div class="row">
     <div class="col-12">
@@ -15,6 +17,8 @@
                     <th scope="col">Delivery Date</th>
                     <th>Ücret</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr *ngFor="let item of cartItem">
                     <td>{{item.product.brandName}}</td>
                     <td>{{item.product.colorName}}</td>
@@ -22,34 +26,38 @@
                     <td>
                         <div class="form-group row">
                           <div class="col-10">
-                            <input class="form-control" style="margin:0; padding: 0;" type="datetime-local" value="2021-08-19T13:45:00" id="example-datetime-local-input">
+                            <input [formControl]="date"  class="form-control" style="margin:0; padding: 0;" type="datetime-local" value="2021-05-12T00:00:00" id="example-datetime-local-input">
                           </div>
                         </div>
                     </td>
-                    <td>-</td>
+                    <td>{{payment}}</td>
                 </tr>
-            </thead>
-            <tbody>
-             
             </tbody>
         </table>
     </div>
 </div>
+
+<div class="row" style="margin-bottom: 20px;">
+    <div class="col-6">
+        <button  class="btn btn-success" (click)="onSubmit()">Kontrol ve Hesaplama</button>
+    </div>
+</div>
+
 <div class="row">
-    <div class="col-12">
+    <div class="col-11">
         <div class="left border">
             <div class="row"> <span class="header">Payment</span>
                     <div class="icons"> 
                         <img src="https://img.icons8.com/color/48/000000/visa.png" />
-                         <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> 
-                         <img src="https://img.icons8.com/color/48/000000/maestro.png" /> 
-                        </div>
+                        <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> 
+                        <img src="https://img.icons8.com/color/48/000000/maestro.png" /> 
+                    </div>
             </div>
             <form> 
                 <span>Cardholder's name:</span> 
-                <input placeholder="Linda Williams"> 
+                <input placeholder=""> 
                 <span>Card Number:</span> 
-                <input placeholder="0125 6780 4567 9909">
+                <input placeholder="">
                 <div class="row">
                     <div class="col-4">
                         <span>Expiry date:</span> 
@@ -61,8 +69,11 @@
                     </div>
                 </div>
                 <input type="checkbox" id="save_card" class="align-left"> 
-                <label for="save_card">Save card details to wallet</label>
+                <label for="save_card">&nbsp;Save card details to wallet.</label>
             </form>
+        </div>
+        <div class="col-1" style="margin-top: 10px;">
+            <button class="btn btn-success" (click)="rentalAdd()" *ngIf="rentCheck">Kirala</button>
         </div>
 </div>
  

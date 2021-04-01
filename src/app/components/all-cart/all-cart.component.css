@@ -120,39 +120,6 @@ input:focus::-webkit-input-placeholder {
     line-height: 2
 }
 
-.btn {
-    background-color: rgb(23, 4, 189);
-    border-color: rgb(23, 4, 189);
-    color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin: 4vh 0 1.5vh 0;
-    padding: 1.5vh;
-    border-radius: 0
-}
-
-.btn:focus {
-    box-shadow: none;
-    outline: none;
-    box-shadow: none;
-    color: white;
-    -webkit-box-shadow: none;
-    transition: none
-}
-
-.btn:hover {
-    color: white
-}
-
-a {
-    color: black
-}
-
-a:hover {
-    color: black;
-    text-decoration: none
-}
-
 input[type=checkbox] {
     width: unset;
     margin-bottom: unset

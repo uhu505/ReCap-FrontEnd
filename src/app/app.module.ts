@@ -14,12 +14,15 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { from } from 'rxjs';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
-import {ToastrModule} from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { FilterColorPipe } from './pipes/filter-color.pipe';
 import { SelectedFilterPipe } from './pipes/selected-filter.pipe';
 import { AllCartComponent } from './components/all-cart/all-cart.component';
-
+import { ReactiveFormsModule } from "@angular/forms";
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,9 @@ import { AllCartComponent } from './components/all-cart/all-cart.component';
     CartSummaryComponent,
     FilterColorPipe,
     SelectedFilterPipe,
-    AllCartComponent
+    AllCartComponent,
+    ProductAddComponent,
+    ColorAddComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ import { AllCartComponent } from './components/all-cart/all-cart.component';
     ToastrModule.forRoot({
       positionClass:"toast-top-right"
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

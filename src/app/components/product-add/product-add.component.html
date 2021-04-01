@@ -1,0 +1,48 @@
+<div class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-dark text-white">
+                <div class="card-header">Yeni Araç Ekle</div>
+                <div class="card-body">
+                    <form [formGroup]="productAddForm">
+                        <div class="mb-3">
+                            <label for="brandId">Brand Id</label>
+                            <div class="form-group">
+                                <input type="number" name="" placeholder="Marka Id" class="form-control" id="brandId" formControlName="brandId">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="colorId">Color Id</label>
+                            <div class="form-group">
+                                <input type="number" name="" placeholder="Renk Id" class="form-control" id="colorId" formControlName="colorId">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modelYear">Model Year</label>
+                            <div class="form-group">
+                                <input type="number" name="" placeholder="Model Yılı" class="form-control" id="modelYear" formControlName="modelYear">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                             <label for="dailyPrice">Daily Price</label>
+                             <div class="form-group">
+                                <input type="number" name="" placeholder="Kiralama Ücreti" class="form-control" id="dailyPrice" formControlName="dailyPrice">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                           <label for="description">Description</label>
+                           <div class="form-group">
+                                <input type="text" name="" placeholder="Açıklama" class="form-control" id="description" formControlName="description">
+                           </div> 
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="mb-3">
+                        <button (click)="add()" class="btn btn-success" style="width: 150px; font-size: 20px;">Kaydet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
