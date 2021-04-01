@@ -4,6 +4,7 @@ import { CarDetail } from 'src/app/modules/interface/car-detail';
 import { CartItem } from 'src/app/modules/interface/cart-item';
 import { CartItems } from 'src/app/modules/interface/cart-items';
 import { CartService } from 'src/app/services/cart.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cart-summary',
@@ -25,6 +26,7 @@ export class CartSummaryComponent implements OnInit {
 
   getCart(){
     this.carItems = this.cartService.list();
+    environment.cartItems = this.cartService.list();
   }
 
   

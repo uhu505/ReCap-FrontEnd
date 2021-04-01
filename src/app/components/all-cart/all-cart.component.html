@@ -1,0 +1,68 @@
+
+    <div class="card-top border-bottom text-center"> <a routerLink="/products"> Back to shop</a> <span id="logo">Sepetiniz</span> </div>
+   <br>
+   <div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr style="text-align: center;">
+                    <th colspan="5">Kiralama Özeti</th>
+                </tr>
+                <tr>
+                    <th scope="col">Brand</th>
+                    <th scope="row">Color</th>
+                    <th scope="row">Daily Price</th>
+                    <th scope="col">Delivery Date</th>
+                    <th>Ücret</th>
+                </tr>
+                <tr *ngFor="let item of cartItem">
+                    <td>{{item.product.brandName}}</td>
+                    <td>{{item.product.colorName}}</td>
+                    <td>{{item.product.dailyPrice}}</td>
+                    <td>
+                        <div class="form-group row">
+                          <div class="col-10">
+                            <input class="form-control" style="margin:0; padding: 0;" type="datetime-local" value="2021-08-19T13:45:00" id="example-datetime-local-input">
+                          </div>
+                        </div>
+                    </td>
+                    <td>-</td>
+                </tr>
+            </thead>
+            <tbody>
+             
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="left border">
+            <div class="row"> <span class="header">Payment</span>
+                    <div class="icons"> 
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                         <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> 
+                         <img src="https://img.icons8.com/color/48/000000/maestro.png" /> 
+                        </div>
+            </div>
+            <form> 
+                <span>Cardholder's name:</span> 
+                <input placeholder="Linda Williams"> 
+                <span>Card Number:</span> 
+                <input placeholder="0125 6780 4567 9909">
+                <div class="row">
+                    <div class="col-4">
+                        <span>Expiry date:</span> 
+                        <input placeholder="YY/MM"> 
+                    </div>
+                    <div class="col-4">
+                        <span>CVV:</span> 
+                        <input id="cvv"> 
+                    </div>
+                </div>
+                <input type="checkbox" id="save_card" class="align-left"> 
+                <label for="save_card">Save card details to wallet</label>
+            </form>
+        </div>
+</div>
+ 

@@ -4,13 +4,13 @@
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li *ngFor="let item of carItems">
-          <a class="dropdown-item">
+          <a class="dropdown-item" style="cursor: default;">
               {{item.product.brandName}}
               <span class="badge bg-success" style="cursor: default;">{{item.quantity}}</span>
               <span (click)="removeFromCart(item.product)" class="badge bg-danger" style="margin-left: 5px; cursor: pointer;">X</span>
         </a>
         </li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item">Sepete Git</a></li>
+      <li><a class="dropdown-item" routerLink="product/yourCart" style="cursor: pointer;">Sepete Git</a></li>
     </ul>
 </li>

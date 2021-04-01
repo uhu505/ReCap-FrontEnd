@@ -2,3 +2,8 @@
     background-color: #808080;
     color: white;
 }
+
+.productSerachButton{
+    height: 50px;
+    width: 100px;
+}

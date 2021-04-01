@@ -16,6 +16,9 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import {ToastrModule} from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { FilterColorPipe } from './pipes/filter-color.pipe';
+import { SelectedFilterPipe } from './pipes/selected-filter.pipe';
+import { AllCartComponent } from './components/all-cart/all-cart.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     ProductDetailComponent,
     VatAddedPipe,
     FilterPipePipe,
-    CartSummaryComponent
+    CartSummaryComponent,
+    FilterColorPipe,
+    SelectedFilterPipe,
+    AllCartComponent
   ],
   imports: [
     BrowserModule,

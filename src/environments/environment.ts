@@ -2,9 +2,12 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { CartItems } from "src/app/modules/interface/cart-items";
+
 export const environment = {
   basePath : "https://localhost:44327/",
-  production: false
+  production: false,
+  cartItems:CartItems
 };
 
  

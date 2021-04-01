@@ -12,9 +12,10 @@ export class CartService {
 
   addToCart(product:CarDetail){
     let item = CartItems.find(c => c.product.id == product.id);
-    if (item) {
+    if(item){
       item.quantity += 1;
-    } else {
+    } 
+    else {
       let cartItem = new CartItem();
       cartItem.product = product;
       cartItem.quantity = 1;

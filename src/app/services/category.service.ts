@@ -22,5 +22,4 @@ export class CategoryService {
     let newPath = this.apiUrl + "/colors/getall";
     return this.httpClient.get<ListResponseModel<Color>>(newPath);
   }
-
 }

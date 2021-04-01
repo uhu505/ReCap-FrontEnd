@@ -16,12 +16,17 @@ export class ProductService {
   getAllProducts():Observable<ListResponseModel<CarDetail>>{ 
    let newPath = this.apiUrl + "cars/getcardetails";
    return this.htppClient.get<ListResponseModel<CarDetail>>(newPath);//<ProductResponseModel>Gelen api karşılığını map et.
- }
+  }
+  
+  getAllSelectedFilterItem(brandId:number, colorId:number):Observable<ListResponseModel<CarDetail>>{
+    let newPath = this.apiUrl + "cars/getallselectedfilteritem?brandId=" + brandId + "&colorId=" + colorId;
+    return this.htppClient.get<ListResponseModel<CarDetail>>(newPath);
+  }
 
   getProductsByCategory(categoryId:number):Observable<ListResponseModel<CarDetail>>{
    let newPath = this.apiUrl + "cars/getcarbydetails?brandId=" + categoryId;
    return this.htppClient.get<ListResponseModel<CarDetail>>(newPath);
- }
+  }
 
   getProductsByColorCategory(categoryId:number):Observable<ListResponseModel<CarDetail>>{
     let newPath = this.apiUrl + "cars/getcarbydetails?colorId=" + categoryId;
