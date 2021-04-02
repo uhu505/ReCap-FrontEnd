@@ -7,6 +7,8 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { ProductComponent } from './components/product/product.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"", pathMatch:"full", component:ProductComponent},
@@ -16,11 +18,11 @@ const routes: Routes = [
   {path:"products/carDetail/:carId", component:ProductDetailComponent},
   {path:"products/brand/:selectedBrand/color/:selectedColor", component:ProductComponent},
   {path:"product/yourCart", component:AllCartComponent},
-  {path:"products/add", component:ProductAddComponent},
+  {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
   {path:"color/add", component:ColorAddComponent},
   {path:"products/update", component:ProductUpdateComponent},
-  {path:"login", component:LoginComponent}
-
+  {path:"login", component:LoginComponent},
+  {path:"register", component:RegisterComponent}
 ];
 
 @NgModule({

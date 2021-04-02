@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -24,6 +24,8 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
  
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { LoginComponent } from './components/login/login.component';
     ProductAddComponent,
     ColorAddComponent,
     ProductUpdateComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,13 @@ import { LoginComponent } from './components/login/login.component';
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS, 
+      useClass:AuthInterceptor, 
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
