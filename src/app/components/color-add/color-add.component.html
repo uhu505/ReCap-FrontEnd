@@ -1,1 +1,24 @@
-<p>color-add works!</p>
+<div class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-dark text-white">
+                <div class="card-header">Yeni Renk Ekle</div>
+                <div class="card-body">
+                    <form [formGroup]="colorAddForm">
+                        <div class="mb-3">
+                            <label for="colorName">Color Name</label>
+                            <div class="form-group">
+                                <input type="text" name="" placeholder="Renk ismi" class="form-control" id="colorName" formControlName="colorName">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="mb-3">
+                        <button (click)="add()" class="btn btn-success" style="width: 150px; font-size: 20px;">Kaydet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

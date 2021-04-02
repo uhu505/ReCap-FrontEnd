@@ -22,6 +22,8 @@ import { AllCartComponent } from './components/all-cart/all-cart.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { LoginComponent } from './components/login/login.component';
  
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ColorAddComponent } from './components/color-add/color-add.component';
     SelectedFilterPipe,
     AllCartComponent,
     ProductAddComponent,
-    ColorAddComponent
+    ColorAddComponent,
+    ProductUpdateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

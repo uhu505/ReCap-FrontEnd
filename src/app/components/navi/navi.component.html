@@ -10,15 +10,51 @@
             <a class="nav-link active" routerLink="/products" aria-current="page">Home</a>
           </li>
           <app-cart-summary></app-cart-summary>
-          <li class="nav-item">
-            <a class="nav-link active" tabindex="-1" routerLink="/products/add" aria-disabled="true">Araç Ekle</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Araç İşlemleri
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li >
+                  <a class="dropdown-item" routerLink="products/add" style="cursor: default;">Ekle</a>
+              </li>
+              <li >
+                <a class="dropdown-item" style="cursor: default;" routerLink="products/update">Güncelle</a>
+            </li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" style="cursor: pointer;" routerLink="products/delete">Sil</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Renk İşlemleri
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li >
+                <a class="dropdown-item" routerLink="color/add" style="cursor: default;">Ekle</a>
+            </li>
+            <li >
+              <a class="dropdown-item" style="cursor: default;">Güncelle</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="color/add">Renk Ekle</a>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" style="cursor: pointer;">Sil</a></li>
+          </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Marka İşlemleri
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li >
+              <a class="dropdown-item" style="cursor: default;">Ekle</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="brand/add">Marka Ekle</a>
-          </li>
+          <li >
+            <a class="dropdown-item" style="cursor: default;">Güncelle</a>
+        </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" style="cursor: pointer;">Sil</a></li>
+        </ul>
+    </li>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -48,4 +48,8 @@ export class ProductService {
   carAdd(product:Car):Observable<ResponseModel>{
     return this.htppClient.post<ResponseModel>(this.apiUrl + "cars/add", product);
   }
+
+  carUpdate(product:Car):Observable<ResponseModel>{
+    return this.htppClient.put<ResponseModel>(this.apiUrl + "cars/update", product);
+  }
 }
